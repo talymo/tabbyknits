@@ -1,0 +1,9 @@
+.idea/
+conf/
+logs/
+
+app/public/*
+!wp-content/
+app/public/wp-content/*
+!app/public/wp-content/plugins
+!app/public/wp-content/themes
