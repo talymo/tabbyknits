@@ -1,0 +1,148 @@
+@import "base-files/base";
+@import url("https://fonts.googleapis.com/css?family=Raleway:400,400i,700");
+
+//SITE STYLES
+
+html {
+
+  body {
+
+    #wrapper {
+
+      header {
+
+        .top-bar {
+          background-color: #efeae7;
+          padding: 5px 20px;
+          display: flex;
+          flex-wrap: wrap;
+
+          #social-menu {
+            text-align: center;
+            width: 100%;
+            padding: 5px;
+
+            ul {
+              list-style: none;
+              padding: 0;
+              margin: 0;
+              text-align: center;
+
+              li {
+                display: inline-block;
+                padding: 0 8px;
+
+                a {
+                  color: #000;
+
+                  i.fab {
+                    font-size: 22px;
+                  }
+
+                }
+
+              }
+
+            }
+
+          }
+
+        }
+
+        #menu {
+
+          #search {
+            width: 100%;
+            text-align: right;
+            padding: 5px 0 10px;
+
+            .search-box {
+              font-size: 16px;
+              border: solid 2px #000000;
+              display: inline-block;
+              position: relative;
+              border-radius: 20px;
+
+              input[type="text"] {
+                font-weight: bold;
+                font-family: 'Raleway', sans-serif;
+                width: 20px;
+                height: 20px;
+                padding: 0 10px;
+                border: none;
+                box-sizing: border-box;
+                border-radius: 20px;
+                transition: width 800ms cubic-bezier(0.68, -0.55, 0.27, 1.55) 150ms;
+                background-color: transparent;
+
+                &:focus {
+                  outline: none;
+                }
+
+                &:focus, &:not(:placeholder-shown) {
+                  width: 200px;
+                  transition: width 800ms cubic-bezier(0.68, -0.55, 0.27, 1.55);
+
+                  + button[type="reset"] {
+                    transform: rotate(-45deg) translateY(0);
+                    transition: transform 150ms ease-out 800ms;
+                  }
+
+                  + button[type="reset"]:after {
+                    opacity: 1;
+                    transition:
+                            top 150ms ease-out (800ms + 150ms),
+                            right 150ms ease-out (800ms + 150ms),
+                            opacity 150ms ease (800ms + 150ms);
+                  }
+
+                }
+
+              }
+
+              button[type="reset"] {
+                background-color: transparent;
+                width: 10px;
+                height: 10px;
+                border: 0;
+                padding: 0;
+                outline: 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                position: absolute;
+                top: calc(20px / 2) - calc(10px / 2);
+                right: calc(20px / 2) - calc(10px / 2);
+                transform: rotate(-45deg) translateY(20px - 2px);
+                transition: transform 150ms ease-out 150ms;
+
+                &:before, &:after {
+                  content: "";
+                  background-color: #000000;
+                  width: 2px;
+                  height: 10px;
+                  position: absolute;
+                }
+
+                &:after {
+                  transform: rotate(90deg);
+                  opacity: 0;
+                  transition: transform 150ms ease-out,
+                  opacity 150ms ease-out;
+                }
+
+              }
+
+            }
+
+          }
+
+        }
+
+      }
+
+    }
+
+  }
+
+}
