@@ -42,3 +42,12 @@ if (! function_exists('fa_custom_setup_kit') ) {
 
 // Custom ARIA walker for nav menus.
 require_once "functions/aria-walker-nav-menu.php";
+
+// Add support for core custom logo.
+add_theme_support(
+    'custom-logo',
+    array(
+        'flex-width'  => false,
+        'flex-height' => false,
+    )
+);

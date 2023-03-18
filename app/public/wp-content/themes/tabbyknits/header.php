@@ -8,23 +8,52 @@
     </head>
     <body <?php body_class(); ?>>
         <?php wp_body_open(); ?>
-        <div id="wrapper">
-            <header id="header" role="banner">
-                <div class="top-bar">
-                    <nav id="social-menu" role="navigation" itemscope itemtype="https://schema.org/SiteNavigationElement">
+        <header id="header" role="banner">
+            <div class="top-bar">
+                <nav id="social-menu" role="navigation" itemscope itemtype="https://schema.org/SiteNavigationElement">
+                    <?php
+                        wp_nav_menu( array(
+                            'theme_location'    => 'social-menu',
+                            'container'         => false,
+                            'walker'            => new Aria_Walker_Nav_Menu(),
+                            'items_wrap'        => '<ul id="%1$s" class="%2$s" role="menubar">%3$s</ul>',
+                            ));
+                    ?>
+                </nav>
+                <div id="search"><?php get_search_form(); ?></div>
+            </div>
+            <div class="main-nav-wrapper">
+                <div class="logo">
+                    <a href="<?php echo get_home_url(); ?>" class="brand-logo" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
                         <?php
-                            wp_nav_menu( array(
-                                'theme_location'    => 'social-menu',
-                                'container'         => false,
-                                'walker'            => new Aria_Walker_Nav_Menu(),
-                                'items_wrap'        => '<ul id="%1$s" class="%2$s" role="menubar">%3$s</ul>',
-                                ));
+                            $custom_logo_id = get_theme_mod( 'custom_logo' );
+                            $custom_logo_url = wp_get_attachment_image_url( $custom_logo_id , 'full' );
+                            $custom_logo_alt = get_post_meta( $custom_logo_id, '_wp_attachment_image_alt', true);
                         ?>
+                        <img src="<?php echo esc_url( $custom_logo_url ); ?>" alt="<?php echo $custom_logo_alt; ?>" />
+                        <span class="sr-only">Home</span>
+                    </a>
+                </div>
+                <!-- Menu -->
+                <div class="menu-container">
+                    <input class="side-menu" type="checkbox" id="side-menu"/>
+                    <div class="hamburger">
+                        <label class="hamburger-icon" for="side-menu">
+                            <span class="hamburger-line"></span>
+                        </label>
+                    </div>
+                    <nav id="menu" role="navigation" itemscope itemtype="https://schema.org/SiteNavigationElement">
+                        <?php
+                        wp_nav_menu( array(
+                            'theme_location'    => 'main-menu',
+                            'container'         => false,
+                            'walker'            => new Aria_Walker_Nav_Menu(),
+                            'items_wrap'        => '<ul id="%1$s" class="%2$s" role="menubar">%3$s</ul>',
+                        ));
+                        ?>
+                        <div id="search"><?php get_search_form(); ?></div>
                     </nav>
                 </div>
-                <nav id="menu" role="navigation" itemscope itemtype="https://schema.org/SiteNavigationElement">
-                    <?php wp_nav_menu( array( 'theme_location' => 'main-menu', 'link_before' => '<span itemprop="name">', 'link_after' => '</span>' ) ); ?>
-                    <div id="search"><?php get_search_form(); ?></div>
-                </nav>
-            </header>
-            <main id="content" role="main">
+            </div>
+        </header>
+        <main id="content" role="main">
