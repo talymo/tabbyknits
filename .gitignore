@@ -1,10 +1,17 @@
 .idea/
 conf/
 logs/
+node_modules
+.vscode
 
 app/sql/*
 app/public/*
-!app/public/wp-content/plugins
+!app/public/wp-content/
+app/public/wp-content/mu-plugins
+app/public/wp-content/upgrade
+app/public/wp-content/uploads
+app/public/wp-content/advanced-cache.php
+app/public/wp-content/index.php
 !app/public/wp-content/themes
 !app/public/build/
 app/public/build/node_modules

@@ -1,0 +1,10 @@
+{
+    "extends": "@wordpress/stylelint-config/scss",
+    "overrides": [
+        {
+          "files": ["**/*.scss"],
+          "customSyntax": "postcss-scss"
+        }
+      ],
+      "stylelint.validate": ["css", "scss"]
+  }
