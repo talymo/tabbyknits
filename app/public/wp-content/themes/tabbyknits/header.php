@@ -8,6 +8,7 @@
     </head>
     <body <?php body_class(); ?>>
         <?php wp_body_open(); ?>
+        <a class="skip-main" href="#content">Skip to main content</a>
         <header id="header" role="banner">
             <div class="top-bar">
                 <nav id="social-menu" role="navigation" itemscope itemtype="https://schema.org/SiteNavigationElement">

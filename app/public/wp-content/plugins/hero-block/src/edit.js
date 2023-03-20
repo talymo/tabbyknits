@@ -19,8 +19,6 @@ import {
 	RichText,
 } from '@wordpress/block-editor';
 
-import { ExternalLink } from '@wordpress/components';
-
 /**
  * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
  * Those files can contain any CSS code that gets applied to the editor.
@@ -37,7 +35,6 @@ import './editor.scss';
  * @param  root0.attributes
  * @param  root0.setAttributes
  * @param  root0.setAttibutes
- * @param  props
  * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-edit-save/#edit
  *
  * @return {WPElement} Element to render.
