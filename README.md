@@ -19,7 +19,7 @@ Here are the steps I took to create this:
 1. Semantic HTML: This source code can be found in the app/public/wp-content/themes/tabbyknits directory.
 2. CSS and custom crafting of UI and component architecture (ideally without a framework): This can be found in the app/public/build/styles/ folder. I use SCSS and gulp to compile live while I code. No frameworks were used. 
 3. Design & QA - good sense of design aesthetic in the context of a website: The front end of the site can be viewed at https://tabbyknitsdev.wpengine.com. For the sake of these examples and because I am going to be using this project in real life as a companion blog to my e-commerce site (https://mountaintopyarn.com), I haven't pushed this into production yet. I have loads more automations I want to integrate to it before I set it loose in the wilds of the internet.
-4. JavaScript (ideally without jQuery): 
+4. JavaScript (ideally without jQuery): I have built an entire Gutenberg block custom and it is located in the public/wp-content/plugins/hero-block directory.
 5. React: React was used to build the custom Gutenberg block in the app/public/wp-content/plugins/hero-block directory. 
 6. WordPress/PHP (recommended, but not required): Wordpress is what is used as the CMS for this sample.
 7. Gutenberg / WordPress block editor (nice to have): I use Gutenberg native for this project. However, I also have a WordPress Template build process I created to also create custom blocks with the Classic Editor and Advanced Custom Fields pro for clients that wish to use Gutenberg selectively on their site or for clients who have legacy code and want to integrate Gutenberg in new feature releases. I am happy to demonstrate this code as well.
