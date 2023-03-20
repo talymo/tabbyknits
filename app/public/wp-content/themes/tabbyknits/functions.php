@@ -11,6 +11,7 @@ function theme_setup() {
         'main-menu' => esc_html__( 'Main Menu', 'tabbyknits' ),
         'social-menu' => esc_html__( 'Social Menu', 'tabbyknits' )
     ));
+    add_theme_support('align-wide');
 }
 
 /* Enqueue the styles and scripts */
