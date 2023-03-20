@@ -5,6 +5,6 @@
 ?>
 <form method="get" id="searchform" class="search-box" action="<?php echo home_url(); ?>/" class="form-inline">
     <label class="sr-only" for="s"><?php _e('Search:', 'tabbyknits'); ?></label>
-    <input type="text" value="<?php the_search_query(); ?>" placeholder=" " name="s" id="s" />
+    <input type="text" value="" placeholder=" " name="s" id="s" />
     <button type="reset"></button>
 </form>
